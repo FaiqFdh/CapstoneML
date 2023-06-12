@@ -1,0 +1,10 @@
+fastapi
+pydantic
+uvicorn[standard]
+python-multipart
+numpy
+Pillow
+tensorflow
+pandas 
+scikit-learn
+mysql-connector
