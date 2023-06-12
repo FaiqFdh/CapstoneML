@@ -27,6 +27,7 @@ def index():
 class RequestPredict(BaseModel):
     user_id: str
 
+#Read data
 tourism = pd.read_csv('./tourism_data.csv')
 rating = pd.read_csv('./user_rating.csv')
 
