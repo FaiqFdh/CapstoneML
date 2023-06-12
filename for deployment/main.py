@@ -32,9 +32,10 @@ rating = pd.read_csv('./user_rating.csv')
 
 #TIDAK BOLEH ADA VALUE KOSONG , JIKA ADA ERROR RETURN JSON
 
+#Endpoint for predict
 @app.post("/predict")
 def predict(req : RequestPredict, response: Response):
-#def predict(response: Response, user_id : int = Query(...)):
+
     try:
         user_id = req.user_id
         
@@ -58,17 +59,14 @@ def predict(req : RequestPredict, response: Response):
             # Convert recommended_tourism_ids to a pandas Series
             top_recommendations_series = pd.Series(top_recommendations)
 
-            # Filter the rows in tempat that have the same place IDs as recommended_tourism_ids
+            # Filter the rows in tourism that have the same place IDs as recommended_tourism_ids
             recommend = tourism[tourism['id'].isin(top_recommendations_series)]
                         
             return {"recommendations": recommend.to_dict(orient='records')}
 
         else:
             # User ID doesn't exist, make random recommendations
-             # Get the total number of tourism data
-            print("Random Rekomendasi")
-            total_tourism = len(tourism)
-
+           
             # Generate random indices to select random recommendations
             num_recommendations = 5
             random_indices = random.sample(range(len(tourism)), num_recommendations)
@@ -112,6 +110,7 @@ class RequestLoc(BaseModel):
 # latitude = -6.175392	
 # longitude = 106.827153
 
+#Endpoint for Nearest Location
 @app.post("/predict_loc")
 def recommend_locations(req:RequestLoc, response: Response):
 
