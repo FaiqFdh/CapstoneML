@@ -11,7 +11,7 @@ User-based collaborative filtering: This approach recommends items to a user bas
 - Pandas
 - Scikit-learn
 
-### Usage
+#### Usage
 
 To get started, follow these steps:
 
@@ -24,5 +24,7 @@ git clone https://github.com/your-username/your-repository.git
 
 3. Run main.py file 
 
+##### Dataset
+[Link to Dataset](https://www.kaggle.com/datasets/aprabowo/indonesia-tourism-destination)
 
 
