@@ -11,5 +11,18 @@ User-based collaborative filtering: This approach recommends items to a user bas
 - Pandas
 - Scikit-learn
 
+### Usage
+
+To get started, follow these steps:
+
+1. Clone the repository:
+```sh
+git clone https://github.com/your-username/your-repository.git
+```
+
+2. Install the required libraries
+
+3. Run main.py file 
+
 
 
